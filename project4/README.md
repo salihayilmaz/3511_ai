@@ -4,6 +4,6 @@ What is the k value ?
 ‘k’ in the knn is a parameter that refers to the number of nearest neighbours to include in the majority of the process.
 
 To run:
-$ python3 knn.py
+$ python knn.py
 then enter the k value.
 
