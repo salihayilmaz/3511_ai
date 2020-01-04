@@ -19,13 +19,13 @@ def column_toFloat(dataset, column):
 	for row in dataset:
 		row[column] = float(row[column])
 
-trainset = load_csv('train.txt')
-for i in range(len(trainset[0])-1):
-	column_toFloat(trainset, i)
+trainData = load_csv('train.txt')
+for i in range(len(trainData[0])-1):
+	column_toFloat(trainData, i)
 
-testset = load_csv('test.txt')
-for i in range(len(testset[0])-1):
-	column_toFloat(testset, i)
+testData = load_csv('test.txt')
+for i in range(len(testData[0])-1):
+	column_toFloat(testData, i)
 
 
 
@@ -86,8 +86,8 @@ def k_nearest_neighbours(train, test, num_neighbours = 3):
 
 
 actual = list()
-for i in range(len(testset)):
-    actual.append(testset[i][-1])
+for i in range(len(testData)):
+    actual.append(testData[i][-1])
 
 
 x_axis = list()
@@ -97,7 +97,7 @@ k = int(input("Please enter the k value: "))
 
 for k_value in range(k,10):
 	x_axis.append(k_value)
-	predicted = k_nearest_neighbours(trainset, testset,k_value)
+	predicted = k_nearest_neighbours(trainData, testData,k_value)
 	accuracy = accuracy_metric(actual, predicted)
 	y_axis.append(accuracy)
 
